@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: s3-demo
+  namespace: s3-demo
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: s3-demo
+  template:
+    metadata:
+      labels:
+        app: s3-demo
+    spec:
+      serviceAccountName: s3-demo-sa
+      containers:
+      - name: application-container
+        image: manivannancsmca/s3-demo:1.0.0
+        ports:
+        - containerPort: 8080
+        env:
+          - name: SPRING_PROFILES_ACTIVE
+            Value: "test"
+          - name: AWS_REGION
+            value: "ap-south-1"
+        resources:
+          limits:
+            cpu: "1"
+            memory: 512Mi
+          requests:
+            cpu: "250m"
+            memory: 256Mi
+        securityContext:
+          allowPrivilegeEscalation: false
+          readOnlyRootFilesystem: true
+          runAsNonRoot: true
+          runAsUser: 10001
