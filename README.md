@@ -17,6 +17,12 @@ AWS docs say you need these command-line tools to prepare, create, and manage EK
 Run:
 
 ```powershell
+aws --version
+
+kubectl version --client
+
+eksctl version
+
 aws sts get-caller-identity
 ```
 
