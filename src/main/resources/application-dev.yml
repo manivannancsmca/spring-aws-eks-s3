@@ -1,4 +1,4 @@
 aws:
   region: ap-south-1
   s3:
-    bucket-name: my-app-bucket-${spring.profiles.active}
+    bucket-name: my-app-bucket-dev-924029800377-ap-south-1-an
