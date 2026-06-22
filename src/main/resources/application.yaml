@@ -1,3 +1,6 @@
+server:
+  port: 8111
+  
 spring:
   application:
     name: spring-aws-eks-s3
