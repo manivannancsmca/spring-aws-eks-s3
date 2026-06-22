@@ -1,0 +1,4 @@
+aws:
+  region: us-east-1
+  s3:
+    bucket-name: my-app-bucket-${spring.profiles.active}

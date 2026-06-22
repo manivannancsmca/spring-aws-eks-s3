@@ -1,3 +1,30 @@
 spring:
   application:
     name: spring-aws-eks-s3
+  profiles:
+    active: dev
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+      base-path: /actuator
+
+  endpoint:
+    health:
+      show-details: always
+
+  health:
+    diskspace:
+      enabled: true
+
+  metrics:
+    tags:
+      application: my-spring-app
+
+info:
+  app:
+    name: My Spring Boot Application
+    version: 1.0.0
+    description: Demo application with Actuator
