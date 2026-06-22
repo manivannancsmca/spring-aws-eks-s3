@@ -1,4 +1,4 @@
 aws:
-  region: ap-south-1
+  region: ap-south-2
   s3:
-    bucket-name: my-app-bucket-dev-924029800377-ap-south-1-an
+    bucket-name: manivannancsmca1989-2026-06-16
