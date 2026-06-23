@@ -6,7 +6,6 @@ on:
       docker-image-name:
         required: true
         type: string
-    # ---> Define outputs so the caller workflow can read the exact tag used
     outputs:
       image-tag:
         description: "The dynamic tag used for the docker image"
@@ -20,19 +19,17 @@ on:
 jobs:
   build-push:
     runs-on: ubuntu-latest
-    # Map the step output to the job output
     outputs:
       sha-tag: ${{ steps.vars.outputs.sha_tag }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # Create a clean, short 7-character SHA tag
       - name: Generate Short SHA Tag
         id: vars
         run: echo "sha_tag=sha-${GITHUB_SHA::7}" >> $GITHUB_OUTPUT
 
-       Miz- name: Set up Docker Buildx
+      - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
       - name: Log in to Docker Hub
