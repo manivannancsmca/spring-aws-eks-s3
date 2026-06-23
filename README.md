@@ -177,6 +177,8 @@ eksctl create cluster `
   --node-type t3.large `
   --nodes 3 `
   --nodes-min 3 `
+
+
   --nodes-max 10 `
   --managed
 ```
