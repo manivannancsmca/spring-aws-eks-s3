@@ -22,6 +22,6 @@ spec:
         - containerPort: 8080
         env:
           - name: SPRING_PROFILES_ACTIVE
-            value: "test"
+            value: "prod"
           - name: AWS_REGION
-            value: "ap-south-1"
+            value: "ap-south-2"
