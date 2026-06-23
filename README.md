@@ -1,3 +1,4 @@
+
 # EKS Cluster Setup on Windows with AWS CLI
 
 Since your AWS credentials are already configured, this README gives you the full command-line flow to create an Amazon EKS cluster from a Windows machine. AWS recommends using `eksctl` for the fastest path, and you can then use `aws eks update-kubeconfig` to connect `kubectl` to the cluster [web:24][web:21].
